@@ -1,0 +1,58 @@
+{
+  "projects": [
+    {
+      "slug": "exemple-projet",
+      "date": "2026-07",
+      "featured": true,
+      "title": {
+        "fr": "Infrastructure d'entreprise virtualisée : AD, pfSense et bastion Teleport",
+        "en": "Virtualiz ed enterprise infrastructure: AD, pfSense and Teleport bastion"
+      },
+      "summary": {
+        "fr": "J'ai construit sous GNS3/VMware un réseau d'entreprise segmenté (VLANs, DMZ, pfSense) avec un domaine Active Directory redondant, une PKI interne et un bastion Teleport pour les accès RDP. Je l'ai ensuite audité avec PingCastle, durci par GPO et supervisé avec Grafana/Loki.",
+        "en": "Using GNS3/VMware, I built a segmented enterprise network (VLANs, DMZ, pfSense) with a redundant Active Directory domain, an internal PKI and a Teleport bastion for RDP access. I then audited it with PingCastle, hardened it through GPOs and monitored it with Grafana/Loki."
+      },
+      "context": {
+        "fr": "Simuler l'infrastructure d'une petite start-up : un réseau segmenté, un annuaire AD structuré (OU, GPO, 2 DC), des accès administrateurs centralisés par un bastion, et un audit de sécurité pour mesurer le résultat. Projet réalisé de mai à juillet 2026, en parallèle de mon stage.",
+        "en": "Simulate the infrastructure of a small start-up: a segmented network, a structured AD directory (OUs, GPOs, 2 DCs), administrator access centralized through a bastion, and a security audit to measure the result. Project carried out from May to July 2026, alongside my internship."
+      },
+      "approach": {  
+        "fr": [
+          "Segmentation : VLANs + routage inter-VLAN et DMZ, pour isoler les flux comme en entreprise.",
+          "2ᵉ contrôleur de domaine : si le DC tombe, plus de DNS, donc plus d'infrastructure.",
+          "Audit PingCastle puis correction par GPO : score initial de 55/100, avec le blocage de NTLMv1/LM comme première remédiation.",
+          "PKI AD CS pour le bastion : authentification par certificat plutôt que par mot de passe.",
+          "Script PowerShell : création automatisée d'utilisateurs (OU, groupes, mot de passe aléatoire, droits NTFS)."
+        ],
+        "en": [
+          "Segmentation: VLANs + inter-VLAN routing and a DMZ, to isolate traffic the way a real company would.",
+          "Second domain controller: if the DC goes down, DNS goes with it, and so does the whole infrastructure.",
+          "PingCastle audit, then GPO remediation: initial score of 55/100, with blocking NTLMv1/LM as the first fix.",
+          "AD CS PKI for the bastion: certificate-based authentication instead of passwords.",
+          "PowerShell script: automated user creation (OUs, groups, random password, NTFS permissions)."
+        ]
+      },
+      "issues": {
+        "fr": [
+          "Erreur : la VM GNS3 ne démarrait pas avec la virtualisation sous VMware.\nCause : conflit autour de la virtualisation imbriquée (j'ai d'abord soupçonné VBS/Hyper-V).\nSolution : après plusieurs tests, j'ai décoché l'option de virtualisation de la VM et choisi les « VMware Links » plutôt que les Appliances.",
+          "Erreur : x509: cannot validate certificate for 192.168.2.10 because it doesn't contain any IP SANs\nCause : le certificat ne contenait pas d'IP SAN, et Teleport s'adressait au serveur par son IP.\nSolution : j'ai utilisé le FQDN du DC dans la config, puisque le DNS du domaine fonctionnait.",
+          "Constat : PingCastle remonte 55/100, dont NTLMv1 encore actif.\nSolution : GPO qui bloque LM/NTLMv1 et force NTLMv2."
+        ],
+        "en": [
+          "Error: the GNS3 VM would not start with virtualization enabled in VMware.\nCause: a nested virtualization conflict (I first suspected VBS/Hyper-V).\nFix: after several tests, I unchecked the VM's virtualization option and used “VMware Links” instead of Appliances.",
+          "Error: x509: cannot validate certificate for 192.168.2.10 because it doesn't contain any IP SANs\nCause: the certificate had no IP SAN, and Teleport was reaching the server by its IP address.\nFix: I used the DC's FQDN in the config, since domain DNS was working.",
+          "Finding: PingCastle reported 55/100, including NTLMv1 still enabled.\nFix: a GPO that blocks LM/NTLMv1 and enforces NTLMv2."
+        ]
+      },
+      "stack": ["Active Directory", "pfSense", "Teleport", "GNS3", "VMware", "AD CS", "PowerShell", "PingCastle"],
+      "cover": "images/projects/ad-projet-cover.jpg",
+      "gallery": [
+        {
+          "image": "images/projects/ad-project.png",
+          "alt": { "fr": "Schéma de l'architecture AD", "en": "AD architecture diagram" }
+        }
+      ],
+      "report": "files/reports/infra-ad-pfsense-teleport.pdf"
+    }
+  ]
+}

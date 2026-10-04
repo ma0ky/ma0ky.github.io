@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Politique de sécurité du contenu : seules les ressources du site lui-même sont autorisées. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'self'; frame-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#1d1f23">
+  <title>Maoky — Cybersecurity student: systems, networks and security</title>
+  <meta name="description" content="I design, harden and document infrastructure, aiming to become a systems, network and cybersecurity administrator.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css?v=3">
+  <script src="../js/main.js?v=3" defer></script>
+</head>
+<body data-page="home" data-root="../">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html">Maoky</a>
+      <nav aria-label="Navigation">
+        <ul class="nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#journey">Background</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="langs" role="group" aria-label="Langue / Language">
+        <span aria-current="true">EN</span>
+        <a href="../index.html" hreflang="fr" lang="fr" title="Switch to French">FR</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Accueil -->
+    <section class="hero">
+      <div class="wrap">
+        <h1 class="hero-name">Melvyn FANCHEDE</h1>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <div class="hero-grid">
+          <p class="hero-role">Cybersecurity student — systems, networks and security</p>
+          <p class="hero-tagline">I design, harden and document infrastructure, aiming to become a systems, network and cybersecurity administrator.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-solid" href="#projects">View projects</a>
+          <a class="btn" href="../files/cv-stage-en.pdf" download>Internship CV</a>
+          <a class="btn" href="../files/cv-alternance-en.pdf" download>Work-study CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="about" class="section">
+      <div class="wrap two-col">
+        <div><h2>About</h2></div>
+        <div class="about-body">
+          <p class="prose">Second-year Bachelor’s student in Computer Science at Guardia Cybersecurity School, I am training in systems and network administration with a defensive focus: Active Directory, hardening, monitoring and infrastructure security.</p>
+          <p class="prose">I document each project as thoroughly as I can, including my mistakes and how I fixed them, mainly to keep a written record in case I need to come back to a specific point later.</p>
+          <dl class="facts">
+            <div><dt>Location</dt><dd>Île-de-France, France</dd></div>
+            <div><dt>Availability</dt><dd>Looking for an internship or work-study placement — June 2027</dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:pmaoky@yahoo.com">pmaoky@yahoo.com</a></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets : la liste est construite par js/main.js à partir de data/projets.json -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p class="lead">Each project is documented: context, approach, issues hit along the way, and the full report.</p>
+        </div>
+        <div id="projects-list" aria-live="polite">
+          <noscript><p class="state">JavaScript is required to display the projects.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parcours -->
+    <section id="journey" class="section">
+      <div class="wrap two-col">
+        <div><h2>Background and education</h2></div>
+        <ol class="timeline">
+        <li class="step education reveal">
+          <p class="step-period">2025 – present</p>
+          <h3>Bachelor’s degree in Computer Science</h3>
+          <p class="step-place"><span class="tag">Education</span> Guardia Cybersecurity School - Puteaux, France</p>
+          <p class="prose"> - Infrastructure, systems and network administration &amp; monitoring</p>
+          <p class="prose"> - Secure full-stack web development</p>
+          <p class="prose"> - Crisis management exercise</p>
+          <p class="prose"> - Introduction to reverse engineering</p>
+          <p class="prose"> - Basic pentesting techniques</p>
+          <p class="prose"> - Understanding cybersecurity challenges</p>
+        </li>
+        <li class="step experience reveal">
+          <p class="step-period">May 2026 – July 2026</p>
+          <h3>Systems and Network Administrator Intern</h3>
+          <p class="step-place"><span class="tag">Experience</span> Les Résidences Yvelines Essonne - Mantes-la-Jolie, France</p>
+          <p class="prose"> - IT asset management and support: helped renew the computer fleet by securing new workstations and handling day-to-day incidents, ensuring a smooth transition for users.</p>
+          <p class="prose"> - Audited file servers by analysing internal access rights, identifying potential vulnerabilities.</p>
+          <p class="prose"> - Mapped the internal network, making the infrastructure easier to understand and weak points easier to spot.</p>
+          <p class="prose"> - Analysed the Microsoft security solutions in place, documenting configurations and protection mechanisms for the team.</p>
+        </li>
+         <li class="step education reveal">
+          <p class="step-period">2022 - 2025</p>
+          <h3>French Technological Baccalaureate STI2D - Digital Information Systems (SIN)</h3>
+          <p class="step-place"><span class="tag">Education</span> Lycée Jules Ferry - Versailles, France</p>
+          <p class="prose"> - Introduction to web languages such as HTML, CSS, JS and Bootstrap.</p>
+          <p class="prose"> - Networking fundamentals.</p>
+          <p class="prose"> - Arduino-based projects.</p>
+          <p class="prose"> - Building SQL databases.</p>
+        </li>
+        <li class="step experience reveal">
+          <p class="step-period">February 2022 - 1 week</p>
+          <h3>Laboratory Technician Intern</h3>
+          <p class="step-place"><span class="tag">Experience</span> GINGER CEBTP - Élancourt, France</p>
+          <p class="prose"> - Designed and tested technical solutions using laboratory tools, meeting specific project needs.</p>
+          <p class="prose"> - Ran tests on samples in the lab, helping validate project results.</p>
+          <p class="prose"> - Used chemistry lab equipment for experiments, following safety and handling protocols.</p>
+        </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="skills" class="section">
+      <div class="wrap">
+        <div class="section-head"><h2>Skills</h2></div>
+        <div class="skill-grid">
+        <div class="skill reveal">
+          <h3>Active Directory</h3>
+          <ul>
+            <li>Windows Server, AD DS, GPO, tiered administration model</li>
+            <li>PKI (AD CS) and LDAPS</li>
+            <li>PingCastle audit and remediation</li>
+            <li>PowerShell</li>
+          </ul>
+        </div>
+        <div class="skill reveal">
+          <h3>Networking</h3>
+          <ul>
+            <li>VLAN, trunk, inter-VLAN routing</li>
+            <li>DHCP, DMZ</li>
+            <li>pfSense</li>
+          </ul>
+        </div>
+        <div class="skill reveal">
+          <h3>Linux and monitoring</h3>
+          <ul>
+            <li>Debian</li>
+            <li>Kali Linux</li>
+            <li>Ubuntu</li>
+            <li>Teleport bastion</li>
+          </ul>
+        </div>
+        <div class="skill reveal">
+          <h3>Virtualization</h3>
+          <ul>
+            <li>VMware Workstation</li>
+            <li>VirtualBox</li>
+            <li>Proxmox</li>
+            <li>GNS3</li>
+          </ul>
+        </div>
+        <div class="skill reveal">
+          <h3>Pentesting</h3>
+          <ul>
+            <li>Banner Grabbing</li>
+            <li>OS Fingerprinting</li>
+            <li>Nmap</li>
+            <li>Netdiscover</li>
+            <li>Msfvenom</li>
+            <li>Metasploitable</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications : images dans images/certifications/ (chemin avec ../ car la page est dans en/)
+         Pour en ajouter une, copie un bloc <li>…</li> et change l'image, le texte "alt" et la légende. -->
+    <section id="certifications" class="section">
+      <div class="wrap">
+        <div class="section-head"><h2>Certifications</h2></div>
+        <ul class="gallery">
+          <!-- Exemple : enlève les marques de commentaire autour de ce bloc et remplace les valeurs
+          <li class="reveal">
+            <figure>
+              <a href="../images/certifications/nom-du-fichier.jpg" target="_blank" rel="noopener noreferrer">
+                <img src="../images/certifications/nom-du-fichier.jpg" alt="Certificate Certification name" loading="lazy" decoding="async">
+              </a>
+              <figcaption>Certification name — Issuer, 2026</figcaption>
+            </figure>
+          </li>
+          -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="wrap two-col">
+        <div><h2>Contact</h2></div>
+        <div>
+          <p class="contact-lead">A conversation, an opportunity, a question about a project: get in touch.</p>
+          <p><a class="contact-mail" href="mailto:pmaoky@yahoo.com">pmaoky@yahoo.com</a></p>
+          <ul class="links">
+            <li><a href="https://github.com/ma0ky" rel="noopener noreferrer" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/melvyn-fanchede-admin" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+            <li><a href="../files/cv-stage-en.pdf" download>Internship CV</a></li>
+            <li><a href="../files/cv-alternance-en.pdf" download>Work-study CV</a></li>
+            <li><a href="../files/cv-stage-fr.pdf" download hreflang="fr">Internship CV (French)</a></li>
+            <li><a href="../files/cv-alternance-fr.pdf" download hreflang="fr">Work-study CV (French)</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Maoky</span>
+      <span>Static site, no cookies, no trackers.</span>
+    </div>
+  </footer>
+</body>
+</html>

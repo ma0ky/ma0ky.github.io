@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Politique de sécurité du contenu : seules les ressources du site lui-même sont autorisées. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'self'; frame-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#1d1f23">
+  <title>Project — Maoky</title>
+  <meta name="description" content="I design, harden and document infrastructure, aiming to become a systems, network and cybersecurity administrator.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css?v=3">
+  <script src="../js/main.js?v=3" defer></script>
+</head>
+<body data-page="project" data-root="../">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html">Maoky</a>
+      <nav aria-label="Navigation">
+        <ul class="nav">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#journey">Background</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="langs" role="group" aria-label="Langue / Language">
+        <span aria-current="true">EN</span>
+        <a href="../projet.html" data-lang-switch hreflang="fr" lang="fr" title="Switch to French">FR</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="project">
+      <!-- Le contenu est construit par js/main.js à partir de data/projets.json (?p=slug dans l'URL) -->
+      <div class="wrap narrow" id="project-root" aria-live="polite">
+        <p class="state">Loading…</p>
+        <noscript><p class="state">JavaScript is required to display the projects.</p></noscript>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Maoky</span>
+      <span>Static site, no cookies, no trackers.</span>
+    </div>
+  </footer>
+</body>
+</html>

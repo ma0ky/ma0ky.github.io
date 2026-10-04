@@ -1,0 +1,3 @@
+.DS_Store
+# Rapports bruts : ne jamais les commit, seulement les versions nettoyées
+_a-nettoyer/
