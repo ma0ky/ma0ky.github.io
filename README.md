@@ -19,9 +19,6 @@ images/projects/      Images de couverture et captures
 files/reports/        Rapports PDF (nettoyés !)
 files/                CV (cv-fr.pdf, cv-en.pdf)
 fonts/                Polices auto-hébergées
-
-scripts/valider.py    Vérifie le site avant publication
-scripts/clean-pdf.sh  Nettoie un PDF (métadonnées, secrets probables)
 ```
 
 Les textes fixes (accueil, à propos, parcours, compétences, contact) sont écrits **directement dans le HTML**. Seuls les projets viennent du JSON, parce que c'est ce qui change souvent.
@@ -64,8 +61,7 @@ python -m http.server 8000      # puis http://localhost:8000
 }
 ```
 
-3. **Lance le validateur** : `python scripts/valider.py`. Il t'indique la ligne exacte d'une virgule oubliée et vérifie que tous les fichiers cités existent.
-4. Vérifie sur `http://localhost:8000`, puis `git add -A`, `git status` (relis ce qui part), `git commit`, `git push`.
+3. Vérifie sur `http://localhost:8000`, puis `git add -A`, `git status` (relis ce qui part), `git commit`, `git push`.
 
 **Règles du JSON** (le piège classique) : pas de virgule après le dernier élément d'une liste ou d'un bloc, guillemets doubles uniquement, pas de commentaires, retour à la ligne dans un texte = `\n`.
 
@@ -89,13 +85,7 @@ Couleurs et typographies : variables en haut de `css/style.css`.
 
 Un rapport de lab contient souvent des mots de passe en clair, des IP internes, des noms d'hôtes et des métadonnées (auteur, chemins). Ne le mets **jamais** dans le repo tel quel : l'historique Git est public et permanent.
 
-```bash
-mkdir _a-nettoyer            # dossier ignoré par git (voir .gitignore)
-sudo apt install libimage-exiftool-perl qpdf poppler-utils
-./scripts/clean-pdf.sh _a-nettoyer/brut.pdf files/reports/mon-projet.pdf
-```
-
-(Sous Windows : WSL, Git Bash ou une VM Debian.) Si le script signale des lignes, corrige le **document source** et réexporte. Ne « masque » pas un mot de passe avec un rectangle noir : le texte reste dessous. Relis le PDF en entier, **captures d'écran comprises** : le script ne lit pas les images.
+Travaille le brouillon dans `_a-nettoyer/` (dossier ignoré par git, voir `.gitignore`). Si tu trouves un secret, corrige le **document source** et réexporte. Avant l'export, retire les métadonnées (Word : Fichier → Informations → Inspecter le document). Ne « masque » pas un mot de passe avec un rectangle noir : le texte reste dessous. Relis le PDF en entier, **captures d'écran comprises**.
 
 Compresse aussi les images avant upload (idéalement < 300 Ko).
 
@@ -123,7 +113,6 @@ Tous les chemins du site sont relatifs, donc il fonctionne aussi dans un repo au
 - Aucune ressource externe (polices, scripts, CDN) : la CSP en `<meta>` n'autorise que le site lui-même (`script-src 'self'`, `default-src 'none'`…).
 - Aucun cookie, traceur ni formulaire.
 - Le contenu du JSON n'est **jamais** injecté comme du HTML : `main.js` utilise `textContent`. Un titre contenant `<script>` s'affiche comme du texte. Les chemins d'images/PDF sont filtrés (`images/…` ou `files/…` uniquement, pas de `..`, pas d'URL externe, pas de `javascript:`).
-- `valider.py` détecte les chemins non autorisés avant publication.
 
 **Limites à connaître (et à pouvoir expliquer en entretien)**
 - GitHub Pages **ne permet pas de définir des headers HTTP**. La CSP en `<meta>` ne supporte pas `frame-ancestors` : le site peut être affiché dans une iframe (clickjacking). Pas non plus de HSTS ni de `X-Frame-Options` personnalisés. Pour de vrais headers, il faut un hébergeur qui accepte un fichier `_headers` (Cloudflare Pages, Netlify).
@@ -133,6 +122,6 @@ Tous les chemins du site sont relatifs, donc il fonctionne aussi dans un repo au
 
 ## 8. À faire / à tester
 
-- Remplacer tout le contenu d'exemple (`python scripts/valider.py` liste ce qui reste).
+- Remplacer tout le contenu d'exemple (texte entre `[crochets]`, `example.com`).
 - Tester un vrai rapport PDF sur ton navigateur **et sur mobile** : le lecteur intégré dépend du navigateur (sur iPhone il n'affiche souvent que la première page), d'où le bouton « Télécharger » toujours présent.
 - Tester le site en ligne dans les deux langues, avec le switch FR/EN sur une page projet.
