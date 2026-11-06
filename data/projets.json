@@ -1,15 +1,15 @@
 {
   "projects": [
     {
-      "slug": "Infrastructure-Active-Directory",
+      "slug": "infrastructure-active-directory",
       "date": "2026-07",
       "featured": true,
       "title": {
         "fr": "Infrastructure d'entreprise virtualisée : AD, pfSense et bastion Teleport",
-        "en": "Virtualiz ed enterprise infrastructure: AD, pfSense and Teleport bastion"
+        "en": "Virtualized enterprise infrastructure: AD, pfSense and Teleport bastion"
       },
       "summary": {
-        "fr": "J'ai construis sous GNS3/VMware un réseau d'entreprise segmenté (VLANs, DMZ, pfSense) avec un domaine Active Directory redondant, une PKI interne et un bastion Teleport pour les accès RDP. Je l'ai ensuite audité avec PingCastle, durci par GPO et supervisé avec Grafana/Loki.",
+        "fr": "J'ai construit sous GNS3/VMware un réseau d'entreprise segmenté (VLANs, DMZ, pfSense) avec un domaine Active Directory redondant, une PKI interne et un bastion Teleport pour les accès RDP. Je l'ai ensuite audité avec PingCastle, durci par GPO et supervisé avec Grafana/Loki.",
         "en": "Using GNS3/VMware, I built a segmented enterprise network (VLANs, DMZ, pfSense) with a redundant Active Directory domain, an internal PKI and a Teleport bastion for RDP access. I then audited it with PingCastle, hardened it through GPOs and monitored it with Grafana/Loki."
       },
       "context": {
