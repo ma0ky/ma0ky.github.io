@@ -262,7 +262,7 @@
           h('h2', { text: T.report }),
           // Lecteur PDF du navigateur. Sur mobile il est souvent limité : d'où le bouton de téléchargement juste dessous.
           h('object', { class: 'pdf', data: report + '#toolbar=1&navpanes=0', type: 'application/pdf', 'aria-label': T.report }, h('p', { class: 'state', text: T.pdfFallback })),
-          h('p', {}, h('a', { class: 'btn btn-solid', href: report, download: true, text: T.download })),
+          h('p', {}, h('a', { class: 'btn btn-solid', href: report, download: report.split('/').pop(), text: T.download })),
         ])
       );
     }
